@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #111d4a;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.header {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header h1 {
+    font-weight: 400;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #eaeaea;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.search::after {
+    content: "🔍";
+    position: absolute;
+    top: 7px;
+    right: 15px;
+}
+
+.characters {
+    padding: 20px 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.characters__item {
+    background-color: #eaeaea;
+    border-radius: 3px;
+    display: grid;
+    grid-template-areas: "name image" "house image";
+    grid-template-columns: 5fr 2fr;
+    padding: 10px 20px;
+}
+
+.characters__item h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.characters__item h2 {
+    grid-area: name;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.characters__item p {
+    grid-area: house;
+}
+
+.characters__item img {
+    grid-area: image;
+    max-height: 100px;
+}
+
+.characters__profile {
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 287px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.characters__profileInfo h2 {
+    margin-bottom: 2rem;
+}
+
+.characters__profileInfo p {
+    margin: 8px 0;
+}
+
+@media (max-width:480px) {
+    h1 {
+        font-size: 23px;
+    }
+    .container {
+        padding: 20px;
+    }
+    .characters {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .characters__profile {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+    .characters__profile img {
+        width: 100%;
+    }
+    .characters__item {
+        grid-template-columns: 2fr 1fr;
+    }
+    .characters__item h2 {
+        font-size: 18px;
+    }
+}
